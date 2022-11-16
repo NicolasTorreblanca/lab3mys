@@ -21,8 +21,6 @@ M_z = c2d(M, 1e-4 , 'zoh');
 step(M_z);
 
 % Desarrollo
-
-% PREGUNTA 1
 a = 1;
 b = 1;
 c = 1;
@@ -40,10 +38,7 @@ step(feedback(H1, H2));
 M = ss(A,B,C,D);
 step(M);
 
-[numerador,denominador] = mab(A,B,C,D);
-
-% PREGUNTA 2
-
+[numerador,denominador] = mab(A,B,C,D)
 
 
 
