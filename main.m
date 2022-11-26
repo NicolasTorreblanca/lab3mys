@@ -42,7 +42,42 @@ step(M);
 
 [numerador,denominador] = mab(A,B,C,D);
 
+s = tf ('s');
+XD = s*eye(2)
+
+[num,den] = ss2tf(A,B,C,D)
+
+H1 = mab(A,B,C,D);
+
 % PREGUNTA 2
+
+% Se transforma el modelo de estado
+% a funcion de transferencia con la 
+% funcion mab
+
+A2 = [-0.4125 0.3125 ; 0.3125 -0.4125];
+B2 = [1 ; 1];
+C2 = [1 0 ; 0 1];
+D2 = [0; 0];
+
+H3 = mab(A2,B2,C2,D2);
+
+% Se calculan las respuestas
+
+% Escalon
+escalon = step(H3);
+
+% Impulso
+impulso = impulse(H3);
+
+% u(t)
+t = linspace(0, 12*pi , 5000);
+u = 100* sin(t/4);
+u(u<0) = 0.;
+
+ut = lsim(H3, u, t);
+
+
 
 
 
