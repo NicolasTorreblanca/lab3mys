@@ -9,14 +9,6 @@
 % Se solicita generar 2 funciones, bam y mab
 
 % bam : Dado 6 parametros debe generar las matrices de modelo de estado
-% mab : A partir de las matrices de un modelo de estado, obtener la función
-%       de transferencia del sistema.
-
-% Despues, para probar el funcionamiento, se debe aplicar bam y mab en un
-% diagrama de bloques, para luego comparar los resultados obtenidos con una
-% función feedback(que igual permite generar funciones de transferencia)
-% ante un impulso como entrada.
-
 % Con el desarrollo algebraico, es posible plantear las matrices de bam
 
 % A = [c/b -a/b ; d/e f/e];
@@ -67,18 +59,18 @@ end
 % ############ SEGUNDA PARTE ############
 
 % En esta parte se solicita estudiar un sistema mediante un modelo de
-% estado. Luego del desarrollo algebraico es posible plantear la matriz de
-% modelo de estados, cuyas matrices A,B,C y D corresponden a:
+% estado.
 
+
+% Se transforma el modelo de estado a funcion de transferencia con la 
+% función mab
 A2 = [-0.4125 0.3125 ; 0.3125 -0.4125];
 B2 = [1 ; 1];
 C2 = [1 0 ; 0 1];
 D2 = [0; 0];
 
-% Con lo que podemos calcular la función de transferencia utilizando la 
-% Funcion Mab
-
 H2 = mab(A2,B2,C2,D2);
+% H21 = ss(A2,B2,C2,D2);
 
 % Se calculan las respuestas
 
